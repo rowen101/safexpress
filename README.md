@@ -21,18 +21,6 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
 ### Premium Partners
 
 - **[Vehikl](https://vehikl.com/)**
@@ -49,18 +37,97 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
 - **[Lendio](https://lendio.com)**
 
+## laravel-datatables
+-Laravel Version Compatibility
+
+| Laravel | Package  |
+|:--------|:---------|
+| 4.2.x   | 3.x      |
+| 5.0.x   | 6.x      |
+| 5.1.x   | 6.x      |
+| 5.2.x   | 6.x      |
+| 5.3.x   | 6.x      |
+| 5.4.x   | 7.x, 8.x |
+| 5.5.x   | 8.x      |
+| 5.6.x   | 8.x      |
+| 5.7.x   | 8.x      |
+| 5.8.x   | 9.x      |
+| 6.x.x   | 9.x      |
+| 7.x.x   | 9.x      |
+| 8.x.x   | 9.x      |
+| 9.x.x   | 10.x     |
+| 10.x.x  | 10.x     |
+
+## Quick Installation
+
+```bash
+composer require yajra/laravel-datatables-oracle:"^10.0"
+```
+
+#### Service Provider & Facade (Optional on Laravel 5.5+)
+
+Register provider and facade on your `config/app.php` file.
+```php
+'providers' => [
+    ...,
+    Yajra\DataTables\DataTablesServiceProvider::class,
+]
+
+'aliases' => [
+    ...,
+    'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+]
+```
+
+#### Configuration (Optional)
+
+```bash
+php artisan vendor:publish --provider="Yajra\DataTables\DataTablesServiceProvider"
+```
+
+And that's it! Start building out some awesome DataTables!
+
+## Debugging Mode
+
+To enable debugging mode, just set `APP_DEBUG=true` and the package will include the queries and inputs used when processing the table.
+
+**IMPORTANT:** Please make sure that APP_DEBUG is set to false when your app is on production.
+
+## PHP ARTISAN SERVE BUG
+
+Please avoid using `php artisan serve` when developing with the package.
+There are known bugs when using this where Laravel randomly returns a redirect and 401 (Unauthorized) if the route requires authentication and a 404 NotFoundHttpException on valid routes.
+
+It is advised to use [Homestead](https://laravel.com/docs/5.4/homestead) or [Valet](https://laravel.com/docs/5.4/valet) when working with the package.
+
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Please see [CONTRIBUTING](https://github.com/yajra/laravel-datatables/blob/master/.github/CONTRIBUTING.md) for details.
+## Breadcrumbs
+```bash
+composer require diglactic/laravel-breadcrumbs
+```
+## Intervention image
+```bash
+composer require intervention/image
+```
+## build docker 
+```bash
+docker-compose up --build 
+```
+## run docker or stop
+```bash
+docker-compose up
+docker-compose down
+```
+## view logs container name
+```bash
+docker logs containername
+```
+## docker in windows 10 access file
+winpty docker exec -it containername //bin//sh
+docker exec -it Safexpress /bin/sh
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+To access your Laravel application : http://localhost:8000
+To access the PhpMyAdmin console: http://localhost:8081
+The MySQL Database is using the port: 3306
